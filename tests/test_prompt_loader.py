@@ -23,7 +23,11 @@ def test_prompt_pin_matches_file():
 
     assert prompt_file.exists()
 
-    actual_sha = hashlib.sha256(prompt_file.read_bytes()).hexdigest()
+    text = prompt_file.read_text(encoding="utf-8")
+
+    normalized_text = text.replace("\r\n", "\n").replace("\r", "\n")
+
+    actual_sha = hashlib.sha256(normalized_text.encode("utf-8")).hexdigest()
 
     assert actual_sha == pin["prompt_sha256"]
 

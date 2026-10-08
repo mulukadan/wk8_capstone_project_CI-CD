@@ -22,9 +22,11 @@ def calculate_sha256(
     file_path: Path,
 ) -> str:
 
-    content = file_path.read_bytes()
+    text = file_path.read_text(encoding="utf-8")
 
-    return hashlib.sha256(content).hexdigest()
+    normalized_text = text.replace("\r\n", "\n").replace("\r", "\n")
+
+    return hashlib.sha256(normalized_text.encode("utf-8")).hexdigest()
 
 
 def load_pin():

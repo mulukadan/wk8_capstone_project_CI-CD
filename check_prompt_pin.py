@@ -12,7 +12,11 @@ def calculate_sha256(
     file_path: Path,
 ) -> str:
 
-    return hashlib.sha256(file_path.read_bytes()).hexdigest()
+    text = file_path.read_text(encoding="utf-8")
+
+    normalized_text = text.replace("\r\n", "\n").replace("\r", "\n")
+
+    return hashlib.sha256(normalized_text.encode("utf-8")).hexdigest()
 
 
 def main():

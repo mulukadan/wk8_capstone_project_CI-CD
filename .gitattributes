@@ -1,0 +1,10 @@
+# Keep versioned prompt files consistent across Windows and Linux
+*.txt text eol=lf
+
+# Configuration/code files
+*.py text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.md text eol=lf
