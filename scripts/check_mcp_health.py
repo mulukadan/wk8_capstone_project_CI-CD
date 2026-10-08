@@ -1,7 +1,10 @@
 import sys
 from pathlib import Path
 
+import yaml
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+CONFIG_FILE = PROJECT_ROOT / "config" / "triage.yaml"
 
 sys.path.insert(
     0,
@@ -11,7 +14,19 @@ sys.path.insert(
 
 from logistics_mcp_versioned import get_server_info
 
-EXPECTED_MCP_VERSION = "1.2.0"
+
+def load_expected_mcp_version():
+
+    with open(
+        CONFIG_FILE,
+        "r",
+        encoding="utf-8",
+    ) as file:
+
+        config = yaml.safe_load(file)
+
+    return config["mcp"]["logistics_version"]
+
 
 REQUIRED_TOOLS = {
     "check_stock",
@@ -47,11 +62,13 @@ def main():
     # VERSION CHECK
     # -----------------------------------
 
-    if version != EXPECTED_MCP_VERSION:
+    expected_mcp_version = load_expected_mcp_version()
+
+    if version != expected_mcp_version:
 
         print("MCP HEALTH: FAILED")
 
-        print(f"Expected version: " f"{EXPECTED_MCP_VERSION}")
+        print(f"Expected version: " f"{expected_mcp_version}")
 
         print(f"Actual version: " f"{version}")
 
