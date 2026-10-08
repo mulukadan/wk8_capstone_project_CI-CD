@@ -1,0 +1,8 @@
+# AfyaPlus Week 8 ownership rules
+
+/prompts/                       @afyaplus/clinical-ops @afyaplus/ml-eng
+/config/                        @afyaplus/ml-eng @afyaplus/platform
+/logistics_mcp_versioned.py     @afyaplus/ml-eng @afyaplus/platform
+/evals/                         @afyaplus/clinical-ops @afyaplus/ml-eng
+/scripts/check_mcp_health.py    @afyaplus/ml-eng @afyaplus/platform
+CHANGELOG.md                    @afyaplus/ml-eng

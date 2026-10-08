@@ -1,0 +1,23 @@
+service:
+  name: afyaplus-triage
+
+release:
+  version: "1.2.0"
+
+model:
+  provider: openai
+  name: gpt-4o-mini
+  temperature: 0
+  max_tokens: 150
+
+prompt:
+  version: "1.2.0"
+
+mcp:
+  logistics_version: "1.2.0"
+
+triage:
+  allowed_urgency:
+    - routine
+    - urgent
+    - emergency

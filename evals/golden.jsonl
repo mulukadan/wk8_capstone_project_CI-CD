@@ -1,0 +1,10 @@
+{"id":"G001","age":28,"symptoms":"high fever and persistent vomiting","expected_urgency":"urgent","must_not":["routine"]}
+{"id":"G002","age":34,"symptoms":"mild headache and tiredness","expected_urgency":"routine","must_not":["emergency"]}
+{"id":"G003","age":61,"symptoms":"difficulty breathing and chest pain","expected_urgency":"emergency","must_not":["routine"]}
+{"id":"G004","age":19,"symptoms":"sore throat and mild cough","expected_urgency":"routine","must_not":["emergency"]}
+{"id":"G005","age":45,"symptoms":"severe pain and persistent vomiting","expected_urgency":"urgent","must_not":["routine"]}
+{"id":"G006","age":22,"symptoms":"runny nose and mild headache","expected_urgency":"routine","must_not":["emergency"]}
+{"id":"G007","age":38,"symptoms":"high fever and severe pain","expected_urgency":"urgent","must_not":["routine"]}
+{"id":"G008","age":52,"symptoms":"mild cough and tiredness","expected_urgency":"routine","must_not":["emergency"]}
+{"id":"G009","age":31,"symptoms":"severe bleeding after an accident","expected_urgency":"emergency","must_not":["routine"]}
+{"id":"G010","age":26,"symptoms":"headache and mild sore throat","expected_urgency":"routine","must_not":["emergency"]}

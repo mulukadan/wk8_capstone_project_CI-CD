@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Central Clinic",
+        "stock": {
+            "amoxicillin": 40,
+            "ors_sachets": 120,
+            "malaria_kits": 20
+        }
+    },
+    {
+        "name": "East Clinic",
+        "stock": {
+            "amoxicillin": 15,
+            "ors_sachets": 60,
+            "malaria_kits": 8
+        }
+    }
+]
