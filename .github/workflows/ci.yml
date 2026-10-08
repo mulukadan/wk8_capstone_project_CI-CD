@@ -141,13 +141,22 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
+            -t afyaplus-week8:v1.2.0 \
             -t afyaplus-week8:${{ github.sha }} \
             .
 
-      - name: Record image tag
+      - name: Record image identity
         run: |
-          echo "Image tag:"
+          echo "Release image:"
+          echo "afyaplus-week8:v1.2.0"
+
+          echo "Commit image:"
           echo "afyaplus-week8:${{ github.sha }}"
+
+          docker inspect \
+            afyaplus-week8:v1.2.0 \
+            --format='{{index .RepoDigests 0}}' \
+            || true
 
       - name: Deploy stub
         run: |
